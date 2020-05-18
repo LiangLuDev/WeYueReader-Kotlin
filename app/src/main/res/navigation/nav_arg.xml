@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/nav_arg"
+            tools:ignore="UnusedNavigation">
+    <!--给不在主页的fragment存放Args-->
+    <!--共用传参，所以不指定fragment-->
+    <fragment
+            android:id="@+id/book_type">
+        <argument android:name="bookType"
+                  app:argType="integer"
+                  android:defaultValue="0"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/book_list">
+        <argument android:name="bookTitle"
+                  app:argType="string"/>
+
+        <argument android:name="bookType"
+                  app:argType="string"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/book_tag">
+
+        <argument android:name="bookTag"
+                  app:argType="string"/>
+    </fragment>
+
+</navigation>

@@ -1,0 +1,17 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.aku.aac.kchttp">
+
+    <application>
+        <provider
+                android:name=".util.KcFileProvider"
+                android:authorities="${applicationId}.kchttp.provider"
+                android:grantUriPermissions="true"
+                android:multiprocess="true">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/kchttp_provider_paths" />
+        </provider>
+
+
+    </application>
+</manifest>

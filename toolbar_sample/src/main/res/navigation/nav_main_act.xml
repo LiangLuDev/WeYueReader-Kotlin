@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/nav_main_act.xml"
+            app:startDestination="@id/firstFragment">
+
+    <fragment android:id="@+id/firstFragment"
+              android:name="com.dct.aac.toolbarsample.FirstFragment"
+              android:label="FirstFragment"/>
+    <fragment android:id="@+id/secondFragment"
+              android:name="com.dct.aac.toolbarsample.SecondFragment"
+              android:label="SecondFragment"/>
+    <fragment android:id="@+id/thirdFragment"
+              android:name="com.dct.aac.toolbarsample.ThirdFragment"
+              android:label="ThirdFragment"/>
+</navigation>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/login_fragment"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="登录"/>
+        <item
+                android:id="@+id/book_shelf_fragment"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="书架"/>
+        <item
+                android:id="@+id/nav_slideshow"
+                android:icon="@drawable/ic_menu_slideshow"
+                android:title="扫描书籍"/>
+        <item
+                android:id="@+id/nav_manage"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="意见反馈"/>
+        <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="关于作者"/>
+    </group>
+
+
+</menu>

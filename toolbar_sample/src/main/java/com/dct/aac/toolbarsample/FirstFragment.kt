@@ -1,0 +1,31 @@
+package com.dct.aac.toolbarsample
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
+import com.aku.aac.core.BaseFragment
+import kotlinx.android.synthetic.main.first_frag.*
+
+/**
+ * @author Zsc
+ * @date   2019/5/29
+ * @desc
+ */
+class FirstFragment:BaseFragment() {
+    override val layout: Int
+        get() = R.layout.first_frag
+
+    override fun initData(savedInstanceState: Bundle?) {
+        toolBar.setupWithNavController(findNavController())
+        tvContent.text = "FirstFragment"
+        tvContent.setOnClickListener {
+            findNavController().navigate(R.id.secondFragment)
+        }
+    }
+
+
+}

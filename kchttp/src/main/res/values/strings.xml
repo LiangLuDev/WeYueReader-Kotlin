@@ -1,0 +1,16 @@
+<resources>
+    <!--无网络时的网络请求msg-->
+    <string name="kchttp_no_net_work">当前无网络</string>
+
+    <string name="kchttp_net_504">请检查网络配置</string>
+    <string name="kchttp_net_5xx">服务器链接异常</string>
+    <string name="kchttp_net_4xx">请检查网络配置</string>
+    <string name="kchttp_net_time_out">网络超时</string>
+    <string name="kchttp_net_parse_error">解析出错</string>
+    <string name="kchttp_net_unknown_error">未知错误</string>
+
+    <string name="kchttp_net_cancel">请求取消</string>
+
+    <string name="kchttp_net_empty_msg">错误信息未知</string>
+
+</resources>

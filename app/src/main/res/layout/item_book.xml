@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+                name="t"
+                type="com.aku.weyue.ui.list.BookInfoViewModel"/>
+    </data>
+    <androidx.cardview.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_common_bg"
+                android:padding="10dp">
+
+            <ImageView
+                    android:scaleType="fitXY"
+                    android:transitionName="bookImage"
+                    android:id="@+id/book_brief_iv_portrait"
+                    android:layout_width="65dp"
+                    android:layout_height="87dp"
+                    app:imageFromUrl="@{t.cover}"
+                    tools:src="@color/color_2f332d"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"/>
+
+            <!---->
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/book_brief_iv_portrait"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:id="@+id/book_brief_tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        tools:text="宦官哈哈"
+                        android:text="@{t.title}"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"/>
+
+                <TextView
+                        android:id="@+id/book_brief_tv_author"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        tools:text="xxxxxxxxxxxxxxxx"
+                        android:text="@{t.author}"
+                        android:textColor="@color/color_51"
+                        android:textSize="12sp"/>
+
+                <TextView
+                        android:id="@+id/book_brief_tv_brief"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        tools:text="xxxxxxxxxxxxxxxx"
+                        android:text="@{t.longIntro}"
+                        android:textColor="@color/color_51"
+                        android:textSize="12sp"/>
+
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:orientation="horizontal">
+
+                    <TextView
+                            android:id="@+id/ctv_arrow_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            tools:text="25"
+                            android:text="@{t.wordCountStr}"
+                            android:textColor="?attr/colorPrimary"
+                            android:textSize="12sp"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="人气"
+                            android:textColor="@color/color_51"
+                            android:textSize="11sp"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="|"
+                            android:textColor="@color/color_51"
+                            android:textSize="11sp"/>
+
+                    <TextView
+                            android:id="@+id/ctv_retention"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            tools:text="25%"
+                            android:text="@{t.retentionRatio+`%`}"
+                            android:layout_marginLeft="5dp"
+                            android:textColor="?attr/colorPrimary"
+                            android:textSize="12sp"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="读者留存"
+                            android:textColor="@color/color_51"
+                            android:textSize="11sp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

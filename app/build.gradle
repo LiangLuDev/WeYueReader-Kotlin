@@ -1,0 +1,89 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+def lib = rootProject.ext.lib
+
+android {
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.aku.weyue"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    android {
+        lintOptions {
+            abortOnError false
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    testImplementation 'junit:junit:4.13-beta-3'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+
+    /**
+     * tablayout
+     */
+    implementation lib["navigationtabstrip"]
+    /**
+     *  SmartRefreshLayout 下拉加载刷新
+     */
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14'
+
+    implementation lib["extextview"]
+    implementation lib["flowlayout"]
+
+    kapt "com.github.bumptech.glide:compiler:$rootProject.glideVersion"
+    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+
+    implementation 'com.android.support:multidex:1.0.3'
+
+    implementation "com.afollestad.material-dialogs:core:0.9.0.2"
+    implementation "com.afollestad.material-dialogs:commons:0.9.0.2"
+
+    implementation "androidx.room:room-runtime:2.1.0-rc01"
+    kapt "androidx.room:room-compiler:2.1.0-rc01"
+
+    implementation "com.tbruyelle.rxpermissions2:rxpermissions:0.9.5"
+    //floatingactionbutton MD悬浮按钮菜单版
+    implementation "com.getbase:floatingactionbutton:1.10.1"
+    implementation "com.github.ybq:Android-SpinKit:1.2.0"
+    //glide样式（圆角、圆、毛玻璃）
+    implementation "jp.wasabeef:glide-transformations:3.3.0"
+    //takephoto 图片选择器
+    implementation "com.jph.takephoto:takephoto_library:4.0.3"
+    implementation project(":common")
+    implementation project(":page_view")
+
+}
+//loadingLayout,现在使用common包的StateLayout
+//implementation lib["loadingLayout"]

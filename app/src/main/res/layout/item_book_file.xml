@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable name="f"
+                  type="com.aku.weyue.data.BookFile"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+        <CheckBox
+                android:id="@+id/file_cb_select"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:enabled="false"
+                android:checked="@{f.select}"
+                android:clickable="false"
+                android:focusableInTouchMode="false"
+                android:button="@null"
+                android:background="@drawable/selector_cb_file"/>
+        <TextView
+                style="@style/WY.Theme.TextAppearance.Common.SingleLine"
+                android:id="@+id/file_tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/file_cb_select"
+                android:layout_marginLeft="12dp"
+                android:layout_marginStart="12dp"
+                android:textSize="16sp"
+                android:text="@{f.name}"
+                tools:text="英语四级"/>
+        <TextView
+                style="@style/WY.Theme.TextAppearance.File.Tag"
+                android:id="@+id/file_tv_tag"
+                app:layout_constraintTop_toBottomOf="@+id/file_tv_name"
+                app:layout_constraintLeft_toLeftOf="@+id/file_tv_name"
+                android:textColor="@color/white"
+                android:layout_marginTop="4dp"
+                android:text="TXT"
+                android:background="?attr/colorPrimary"/>
+
+        <TextView
+                android:id="@+id/file_tv_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/file_tv_tag"
+                app:layout_constraintLeft_toRightOf="@id/file_tv_tag"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:text="@{f.sizeString}"
+                tools:text="324kb"/>
+
+        <TextView
+                android:id="@+id/file_tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintTop_toTopOf="@id/file_tv_tag"
+                app:layout_constraintLeft_toRightOf="@id/file_tv_size"
+                android:text="@{f.time}"
+                tools:text="2017-05-22"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

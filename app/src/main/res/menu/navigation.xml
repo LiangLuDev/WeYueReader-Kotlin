@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/boy_fragment"
+        android:title="男生" />
+
+    <item
+        android:id="@+id/girl_fragment"
+        android:title="女生" />
+
+    <item
+        android:id="@+id/publish_fragment"
+        android:title="出版" />
+
+</menu>

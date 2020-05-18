@@ -1,0 +1,82 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 28
+    dataBinding {
+        enabled = true
+    }
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 28
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.13-beta-3'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+    //***** Androidx
+    api 'androidx.appcompat:appcompat:1.1.0-alpha05'
+    api 'androidx.core:core-ktx:1.2.0-alpha01'
+    api 'androidx.constraintlayout:constraintlayout:2.0.0-beta1'
+    api 'androidx.recyclerview:recyclerview:1.1.0-alpha05'
+    api "androidx.work:work-runtime-ktx:$workVersion"
+//    api 'androidx.core:core-ktx:1.0.1'
+    // navigation
+    api "androidx.navigation:navigation-fragment-ktx:2.1.0-alpha04"
+    api "androidx.navigation:navigation-ui-ktx:2.1.0-alpha04"
+
+    //kotlin协程
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.2.1"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.2.1"
+    //retrofit协程适配器
+    api "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2"
+
+//    api 'androidx.recyclerview:recyclerview-selection:1.0.0'
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14'
+
+    //****Injector for Android
+    api "org.koin:koin-android:2.0.0-rc-2"
+//  只使用androidx的  api "org.koin:koin-android-scope:2.0.0-rc-2"
+    api "org.koin:koin-androidx-viewmodel:2.0.0-rc-2"
+    //RxJava相关
+    api 'io.reactivex.rxjava2:rxkotlin:2.3.0'
+    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    //retrofit2
+    api "com.squareup.retrofit2:adapter-rxjava2:2.5.0"
+//    api 'com.squareup.retrofit2:retrofit:$rootProject.retrofit2Version'
+    api "com.squareup.retrofit2:converter-scalars:$rootProject.retrofit2Version"
+    api "com.squareup.retrofit2:converter-gson:$rootProject.retrofit2Version"
+
+
+    api "androidx.lifecycle:lifecycle-extensions:2.2.0-alpha01"
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0-alpha01"
+
+    api 'com.squareup.okhttp3:okhttp:4.0.0-alpha01'
+    api 'com.squareup.okhttp3:logging-interceptor:4.0.0-alpha01'
+
+    api "com.google.android.material:material:1.1.0-alpha06"
+    //Utils工具类
+    api 'com.blankj:utilcode:1.23.7'
+}
