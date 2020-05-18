@@ -1,4 +1,5 @@
-# 微Yue电子书-Kotlin
+# 微Yue电子书-Kotlin版本
+# [微Yue电子书-Java版本](https://github.com/LiangLuDev/WeYueReader)
 ###  项目功能
 - 注册登录
 - 用户信息、用户密码、用户图像修改
