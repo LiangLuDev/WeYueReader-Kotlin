@@ -1,5 +1,12 @@
 # 微Yue电子书-Kotlin版本
 # [微Yue电子书-Java版本](https://github.com/LiangLuDev/WeYueReader)
+
+
+## 服务数据获取不到
+由于服务器到期，因此应用获取不到数据，此项目仅做学习使用。
+如果想要使用服务器，可自行clone服务端代码使用。
+[服务端地址](https://github.com/LiangLuDev/WeYueSever)
+
 ###  项目功能
 - 注册登录
 - 用户信息、用户密码、用户图像修改
